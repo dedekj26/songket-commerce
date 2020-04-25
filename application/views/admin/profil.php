@@ -41,7 +41,7 @@
                 </table>
 
                 <a href="<?= base_url() ?>admin/edit_profil">
-                  <button type="button" class="btn btn-primary float-right">Edit Profil</button>
+                  <button type="button" class="btn btn-primary float-right"><i class="fa fa-edit"></i> Edit Profil</button>
                 </a>
 
               </div>

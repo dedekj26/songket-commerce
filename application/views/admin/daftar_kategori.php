@@ -39,10 +39,10 @@
                         <td><?= $row['nama_kategori']; ?></td>
                         <td><?= $row['deskripsi_kategori']; ?></td>
                         <td>
-                          <a href="<?= base_url() ?>admin/hapus_kategori/<?= $row['id_kategori'] ?>" class="btn btn-danger tombol-hapus">
+                          <a href="<?= base_url() ?>admin/hapus_kategori/<?= $row['id_kategori'] ?>" class="btn btn-danger btn-sm tombol-hapus">
                             <i class="fa fa-trash"></i>
                           </a>
-                          <a href="<?= base_url() ?>admin/form_ubah_kategori/<?= $row['id_kategori'] ?>" class="btn btn-success">
+                          <a href="<?= base_url() ?>admin/form_ubah_kategori/<?= $row['id_kategori'] ?>" class="btn btn-sm btn-success">
                             <i class="fa fa-edit"></i>
                           </a>
                         </td>

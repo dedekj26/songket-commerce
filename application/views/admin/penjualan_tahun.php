@@ -18,7 +18,7 @@
                     <input type="text" name="tahun" placeholder="Pilih Tahun" id="datepicker" class="mb-3 form-control" />
                 </div>
                 <div class="col-4">
-                    <button type="submit" class="btn btn-primary">Atur</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                 </div>
               </form>
 
@@ -31,6 +31,7 @@
                       <th>Barang</th>
                       <th>Total Harga</th>
                       <th>Tanggal Penjualan</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -43,6 +44,11 @@
                       </td>
                       <td>Rp. 520.000</td>
                       <td>12 Februari 2020</td>
+                      <td>
+                         <a href="<?= base_url() ?>admin/detail_penjualan/" class="btn btn-success btn-sm">
+                            <i class="fa fa-desktop"></i> Detail
+                          </a>
+                      </td>
                     </tr>
                     <tr>
                       <td>2</td>
@@ -53,6 +59,11 @@
                       </td>
                       <td>Rp. 120.000</td>
                       <td>14 Februari 2020</td>
+                      <td>
+                         <a href="<?= base_url() ?>admin/detail_penjualan/" class="btn btn-success btn-sm">
+                            <i class="fa fa-desktop"></i> Detail
+                          </a>
+                      </td>
                     </tr>
                   </tbody>
                 </table>

@@ -58,8 +58,8 @@
                     </tbody>
                   </table>
                   
-                  <button type="submit" class="btn btn-primary float-right">Simpan</button>
-                  <a href="<?= base_url() ?>admin/daftar_barang" class="btn btn-secondary mr-3 float-right">Batal</a>
+                  <button type="submit" class="btn btn-primary float-right"><i class="fa fa-save"></i> Simpan</button>
+                  <a href="<?= base_url() ?>admin/daftar_barang" class="btn btn-secondary mr-3 float-right"><i class="fa fa-arrow-left"></i> Batal</a>
                   
                 </form>
               </div>

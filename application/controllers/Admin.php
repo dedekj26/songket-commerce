@@ -173,10 +173,17 @@ class Admin extends CI_Controller {
 
 
 	// Controller Penjualan
-	public function penjualan()
+	public function penjualan_tahun()
 	{
 		$this->load->view('templates/header_admin.php');
-		$this->load->view('admin/penjualan');
+		$this->load->view('admin/penjualan_tahun');
+		$this->load->view('templates/footer_admin.php');
+	}
+
+	public function penjualan_bulan()
+	{
+		$this->load->view('templates/header_admin.php');
+		$this->load->view('admin/penjualan_bulan');
 		$this->load->view('templates/footer_admin.php');
 	}
 	// End of Controller Penjualan

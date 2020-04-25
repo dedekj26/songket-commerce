@@ -51,10 +51,10 @@
                       <td class="align-middle">Rp. <?= $row['harga_barang']; ?></td>
                       <td class="text-center align-middle"><img src="<?= base_url() ?>assets/img/barang/<?= $row['foto_barang']; ?>" alt="Foto Barang" height="90" width="90"></td>
                       <td>
-                          <a href="<?= base_url() ?>admin/hapus_barang/<?= $row['id_barang'] ?>" class="btn btn-danger tombol-hapus">
+                          <a href="<?= base_url() ?>admin/hapus_barang/<?= $row['id_barang'] ?>" class="btn btn-danger btn-sm tombol-hapus">
                             <i class="fa fa-trash"></i>
                           </a>
-                          <a href="<?= base_url() ?>admin/form_ubah_barang/<?= $row['id_barang'] ?>" class="btn btn-success">
+                          <a href="<?= base_url() ?>admin/form_ubah_barang/<?= $row['id_barang'] ?>" class="btn btn-success btn-sm">
                             <i class="fa fa-edit"></i>
                           </a>
                       </td>
