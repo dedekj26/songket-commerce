@@ -114,7 +114,7 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url() ?>admin/profil">
+        <a class="nav-link" href="<?= base_url() ?>admin/profil/<?= $user['id_operator'] ?>">
           <i class="fas fa-fw fa-user"></i>
           <span>Profil</span></a>
       </li>
@@ -159,12 +159,12 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Dedek Julian</span>
-                <img class="img-profile rounded-circle" src="<?= base_url() ?>assets/img/profile.jpg">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['nama_operator'] ?></span>
+                <img class="img-profile rounded-circle" src="<?= base_url() ?>assets/img/profile/<?= $user['foto'] ?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?= base_url() ?>admin/profil/<?= $user['id_operator'] ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profil
                 </a>

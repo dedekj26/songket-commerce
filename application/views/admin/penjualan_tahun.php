@@ -28,7 +28,6 @@
                     <tr>
                       <th>No</th>
                       <th>Kode Penjualan</th>
-                      <th>Barang</th>
                       <th>Total Harga</th>
                       <th>Tanggal Penjualan</th>
                       <th>Action</th>
@@ -38,10 +37,6 @@
                     <tr>
                       <td>1</td>
                       <td>BS001</td>
-                      <td>
-                        <span class="nama-barang">Baju Songket</span>
-                        <span class="jumlah-barang">x 4</span>
-                      </td>
                       <td>Rp. 520.000</td>
                       <td>12 Februari 2020</td>
                       <td>
@@ -53,10 +48,6 @@
                     <tr>
                       <td>2</td>
                       <td>KS002</td>
-                      <td>
-                        <span class="nama-barang">Kain Songket 3m</span>
-                        <span class="jumlah-barang">x 2</span>
-                      </td>
                       <td>Rp. 120.000</td>
                       <td>14 Februari 2020</td>
                       <td>

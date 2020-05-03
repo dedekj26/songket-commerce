@@ -2,6 +2,8 @@
 <body class="bg-gradient-primary">
 
   <div class="container">
+    
+    <div class="flash-data" data-login="<?= $this->session->flashdata('login'); ?>"></div>
 
     <!-- Outer Row -->
     <div class="row justify-content-center my-5">
@@ -19,13 +21,24 @@
                     <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
                   </div>
 
-                  <form action="<?= base_url() ?>auth/login" method="post" class="user">
+                  <form action="<?= base_url() ?>auth/login" method="POST" class="user">
                     <div class="form-group">
-                      <input type="username" class="form-control form-control-user" id="username" aria-describedby="emailHelp" placeholder="Masukkan Username" required>
+                      <input  type="text" 
+                              class="form-control form-control-user" 
+                              name="username" 
+                              aria-describedby="emailHelp" 
+                              placeholder="Masukkan Username" 
+                              value="<?= set_value('username'); ?>"
+                              required>
                     </div>
+
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="password" placeholder="Password" required>
+                      <input  type="password" 
+                              class="form-control form-control-user" 
+                              name="password" 
+                              placeholder="Password" required>
                     </div>
+
                     <button type="submit" class="btn btn-primary btn-user btn-block">
                       Login
                     </button>
@@ -35,9 +48,9 @@
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Lupa Password?</a>
                   </div>
-                  <div class="text-center">
+<!--                   <div class="text-center">
                     <a class="small" href="<?= base_url() ?>auth/daftar">Buat Akun!</a>
-                  </div>
+                  </div> -->
 
                 </div>
               </div>

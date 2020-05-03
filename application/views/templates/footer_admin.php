@@ -35,7 +35,7 @@
         <div class="modal-body">Tekan tombol 'Logout' dibawah ini untuk keluar dari akun anda.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-          <a class="btn btn-primary" href="<?= base_url() ?>auth">Logout</a>
+          <a class="btn btn-primary" href="<?= base_url() ?>auth/logout">Logout</a>
         </div>
       </div>
     </div>
@@ -65,6 +65,7 @@
   <script src="<?= base_url() ?>assets/vendor/sweetalert2/sweetalert2.all.min.js"></script>
 
   <script src="<?= base_url() ?>assets/js/myscript.js"></script>
+  <script src="<?= base_url() ?>assets/js/myscript_login.js"></script>
 
   <script>  
   $("#datepicker").datepicker( {
@@ -76,7 +77,9 @@
 
   <script>  
   $(document).ready(function(){
-    $('#datepicker').datepicker();
+    $('#datepicker').datepicker({
+      format: "dd/mm/yyyy"
+    });
   });
   </script>
 
