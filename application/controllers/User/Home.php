@@ -14,8 +14,9 @@ class Home extends CI_Controller {
 	{
 		$data['barang'] = $this->Barang_model->get_barang();
 		$data['kategori'] = $this->Kategori_model->get_kategori();
+		$data['keranjang'] = $this->cart->contents();
 
-		$this->load->view('templates/header_user.php');
+		$this->load->view('templates/header_user.php', $data);
 		$this->load->view('user/home', $data);
 		$this->load->view('templates/footer_user.php');
 	}

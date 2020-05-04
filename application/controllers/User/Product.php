@@ -16,8 +16,9 @@ class Product extends CI_Controller {
         $data['barang'] = $this->Barang_model->get_barang();
 		$data['kategori'] = $this->Kategori_model->get_kategori();
 		$data['barang_limit'] = $this->Barang_model->get_barang_limit();
+		$data['keranjang'] = $this->cart->contents();
 
-		$this->load->view('templates/header_user.php');
+		$this->load->view('templates/header_user.php', $data);
 		$this->load->view('user/product', $data);
 		$this->load->view('templates/footer_user.php');
 	}
@@ -26,8 +27,9 @@ class Product extends CI_Controller {
 	{
 		$data['barang'] = $this->Barang_model->get_barang();
 		$data['kategori'] = $this->Kategori_model->get_kategori();
+		$data['keranjang'] = $this->cart->contents();
 
-		$this->load->view('templates/header_user.php');
+		$this->load->view('templates/header_user.php', $data);
 		$this->load->view('user/browse', $data);
 		$this->load->view('templates/footer_user.php');
 	}
@@ -36,8 +38,9 @@ class Product extends CI_Controller {
 	{
         $data['barang'] = $this->Barang_model->pilih_barang_kategori($id_kategori);
 		$data['kategori'] = $this->Kategori_model->get_kategori();
+		$data['keranjang'] = $this->cart->contents();
 
-		$this->load->view('templates/header_user.php');
+		$this->load->view('templates/header_user.php', $data);
 		$this->load->view('user/browse_kategori', $data);
 		$this->load->view('templates/footer_user.php');
 	}

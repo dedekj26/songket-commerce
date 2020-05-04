@@ -56,7 +56,15 @@
                                         "/>
                                 <ul>
                                     <li class="w-icon active">
-                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
+                                        <a  href="#"
+                                            class="add_cart"
+                                            data-produkid="<?= $row['id_barang'] ?>"
+                                            data-produknama="<?= $row['nama_barang']; ?>"
+                                            data-produkharga="<?= $row['harga_barang']; ?>"
+                                            data-produkfoto="<?= $row['foto_barang']; ?>"
+                                        >
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
                                     </li>
                                     <li class="quick-view">
                                         <a href="<?= base_url() ?>user/product/index/<?= $row['id_barang'] ?>">

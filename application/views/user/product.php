@@ -52,7 +52,13 @@
                                     <h4>Rp. <?= number_format($row['harga_barang']); ?></h4>
                                 </div>
                                 <div class="quantity">
-                                    <a href="shopping-cart.html" class="primary-btn pd-cart">Add To Cart</a>
+                                    <a  href="#"
+                                        class="add_cart primary-btn pd-cart"
+                                        data-produkid="<?= $row['id_barang'] ?>"
+                                        data-produknama="<?= $row['nama_barang']; ?>"
+                                        data-produkharga="<?= $row['harga_barang']; ?>"
+                                        data-produkfoto="<?= $row['foto_barang']; ?>"
+                                    >Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +97,15 @@
                                     style="height: 300px;" />
                             <ul>
                                 <li class="w-icon active">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a  href="#"
+                                        class="add_cart"
+                                        data-produkid="<?= $row['id_barang'] ?>"
+                                        data-produknama="<?= $row['nama_barang']; ?>"
+                                        data-produkharga="<?= $row['harga_barang']; ?>"
+                                        data-produkfoto="<?= $row['foto_barang']; ?>"
+                                    >
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </a>
                                 </li>
                                 <li class="quick-view">
                                     <a href="<?= base_url() ?>user/product/index/<?= $row['id_barang'] ?>">

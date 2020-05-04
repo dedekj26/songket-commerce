@@ -48,27 +48,42 @@
                             <li class="cart-icon">
                                 <a href="#">
                                     Keranjang Belanja <i class="fa fa-shopping-cart"></i>
-                                    <span>2</span>
+                                    <span><?= $this->cart->total_items() ?></span>
                                 </a>
                                 <div class="cart-hover">
                                     <div class="select-items">
                                         <table>
                                             <tbody>
+                                                
+                                                <?php
+                                                    foreach ($keranjang as $key) :
+                                                ?>
 
                                                 <tr>
                                                     <td class="si-pic">
-                                                        <img src="img/select-product-1.jpg" alt="" />
+                                                        <img    src="<?= base_url() ?>assets/img/barang/<?= $key['photo'] ?>" 
+                                                                alt="foto"
+                                                                height="50"
+                                                                width="50" />
                                                     </td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
-                                                            <p>Rp. 120.000 x 1</p>
-                                                            <h6>Kain Songket 3m</h6>
+                                                            <p>Rp. <?= number_format($key['price']) ?> x <?= $key['qty'] ?></p>
+                                                            <h6><?= $key['name'] ?></h6>
                                                         </div>
                                                     </td>
                                                     <td class="si-close">
-                                                        <i class="ti-close"></i>
+                                                        <button type="button" 
+                                                                id="<?= $key['rowid'] ?>"
+                                                                class="hapus_cart btn btn-borderless">
+                                                            <i class="ti-close"></i>
+                                                        </button>
                                                     </td>
                                                 </tr>
+                                                
+                                                <?php
+                                                    endforeach;
+                                                ?>
 
                                             </tbody>
                                         </table>
@@ -76,7 +91,7 @@
                                     
                                     <div class="select-total">
                                         <span>total:</span>
-                                        <h5>Rp. 270.000</h5>
+                                        <h5>Rp. <?= number_format($this->cart->total()) ?></h5>
                                     </div>
 
                                     <div class="select-button">

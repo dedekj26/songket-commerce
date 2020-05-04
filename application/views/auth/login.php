@@ -46,7 +46,7 @@
 
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Lupa Password?</a>
+                    <a class="small" href="<?= base_url() ?>">Kembali ke home</a>
                   </div>
 <!--                   <div class="text-center">
                     <a class="small" href="<?= base_url() ?>auth/daftar">Buat Akun!</a>

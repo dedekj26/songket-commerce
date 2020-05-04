@@ -35,6 +35,7 @@
                     <div class="footer-widget">
                         <h5>Akun Saya</h5>
                         <ul>
+                            <li><a href="<?= base_url() ?>auth">Admin</a></li>
                             <li><a href="#">Keranjang Belanja</a></li>
                         </ul>
                     </div>
@@ -70,6 +71,39 @@
     <script src="<?= base_url() ?>assets/vendor/front-end/js/jquery.slicknav.js"></script>
     <script src="<?= base_url() ?>assets/vendor/front-end/js/owl.carousel.min.js"></script>
     <script src="<?= base_url() ?>assets/vendor/front-end/js/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.add_cart').click(function(){
+                var produk_id    = $(this).data("produkid");
+                var produk_nama  = $(this).data("produknama");
+                var produk_harga = $(this).data("produkharga");
+                var produk_foto = $(this).data("produkfoto");
+                $.ajax({
+                    url : "<?php echo base_url();?>user/cart",
+                    method : "POST",
+                    data : {produk_id: produk_id, produk_nama: produk_nama, produk_harga: produk_harga, produk_qty: 1, produk_foto: produk_foto},
+                    success: function(data){
+                        location.reload();
+                    }
+                });
+            });
+     
+            //Hapus Item Cart
+            $(document).on('click','.hapus_cart',function(){
+                var row_id=$(this).attr("id");
+                $.ajax({
+                    url : "<?php echo base_url();?>user/cart/delete_cart",
+                    method : "POST",
+                    data : {row_id : row_id},
+                    success :function(data){
+                        location.reload();
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
