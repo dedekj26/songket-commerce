@@ -51,7 +51,7 @@
                   </tbody>
                 </table>
 
-                <a href="<?= base_url() ?>admin/edit_profil/<?= $row['id_operator']; ?>">
+                <a href="<?= base_url() ?>admin/profil/edit_profil/<?= $row['id_operator']; ?>">
                   <button type="button" class="btn btn-primary float-right"><i class="fa fa-edit"></i> Edit Profil</button>
                 </a>
 

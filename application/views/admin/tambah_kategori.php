@@ -13,7 +13,7 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <form action="<?= base_url() ?>admin/simpan_kategori" method="post">
+                <form action="<?= base_url() ?>admin/kategori/simpan_kategori" method="post">
                   <table class="table table-bordered" width="100%" cellspacing="0">
                     <tbody>
                       <tr>
@@ -32,7 +32,7 @@
                   </table>
                   
                   <button type="submit" class="btn btn-primary float-right"><i class="fa fa-save"></i> Simpan</button>
-                  <a href="<?= base_url() ?>admin/daftar_kategori" class="btn btn-secondary mr-3 float-right"><i class="fa fa-arrow-left"></i> Batal</a>
+                  <a href="<?= base_url() ?>admin/kategori" class="btn btn-secondary mr-3 float-right"><i class="fa fa-arrow-left"></i> Batal</a>
 
                 </form>
               </div>

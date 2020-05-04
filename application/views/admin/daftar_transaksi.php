@@ -30,6 +30,7 @@
                       <th>Kode Transaksi</th>
                       <th>Total Harga</th>
                       <th>Tanggal Transaksi</th>
+                      <th>Status</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -46,8 +47,21 @@
                       <td>Rp. <?= $row['total_bayar']; ?></td>
                       <td><?= $row['tgl_transaksi']; ?></td>
                       <td>
+                        <?php
+                            if( $row['status_transaksi'] == 'PENDING' ){
+                              echo "<span class='badge badge-info'>";
+                            } elseif( $row['status_transaksi'] == 'SUCCESS' ) {
+                              echo "<span class='badge badge-success'>";
+                            } elseif( $row['status_transaksi'] == 'FAILED' ) {
+                              echo "<span class='badge badge-warning'>";
+                            } else {
+                              echo "<span>";
+                            } 
+                            echo $row['status_transaksi'];
+                        ?></span>
+                      <td>
                           <a  href="#mymodal"
-                              data-remote="<?= base_url() ?>admin/detail_transaksi/<?= $row['id_transaksi']; ?>"
+                              data-remote="<?= base_url() ?>admin/transaksi/detail_transaksi/<?= $row['id_transaksi']; ?>"
                               data-title="Detail Transaksi <?= $row['kode_transaksi']; ?>"
                               data-toggle="modal"
                               data-target="#mymodal"

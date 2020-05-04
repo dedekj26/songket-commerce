@@ -47,7 +47,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<?= base_url() ?>admin">
+        <a class="nav-link" href="<?= base_url() ?>admin/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -69,8 +69,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu Barang</h6>
-            <a class="collapse-item" href="<?= base_url() ?>admin/daftar_barang">Lihat Daftar Barang</a>
-            <a class="collapse-item" href="<?= base_url() ?>admin/tambah_barang">Tambah Data Barang</a>
+            <a class="collapse-item" href="<?= base_url() ?>admin/barang">Lihat Daftar Barang</a>
+            <a class="collapse-item" href="<?= base_url() ?>admin/barang/tambah_barang">Tambah Data Barang</a>
           </div>
         </div>
       </li>
@@ -84,8 +84,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu Kategori</h6>
-            <a class="collapse-item" href="<?= base_url() ?>admin/daftar_kategori">Lihat Daftar Kategori</a>
-            <a class="collapse-item" href="<?= base_url() ?>admin/tambah_kategori">Tambah Data Kategori</a>
+            <a class="collapse-item" href="<?= base_url() ?>admin/kategori">Lihat Daftar Kategori</a>
+            <a class="collapse-item" href="<?= base_url() ?>admin/kategori/tambah_kategori">Tambah Data Kategori</a>
           </div>
         </div>
       </li>
@@ -93,12 +93,12 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePenjualan" aria-expanded="true" aria-controls="collapsePenjualan">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Penjualan</span>
+          <span>Transaksi</span>
         </a>
         <div id="collapsePenjualan" class="collapse" aria-labelledby="headingPenjualan" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Menu Penjualan</h6>
-            <a class="collapse-item" href="<?= base_url() ?>admin/daftar_transaksi">Data Tahunan</a>
+            <h6 class="collapse-header">Menu Transaksi</h6>
+            <a class="collapse-item" href="<?= base_url() ?>admin/transaksi">Data Tahunan</a>
           </div>
         </div>
       </li>
@@ -113,7 +113,7 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url() ?>admin/profil/<?= $user['id_operator'] ?>">
+        <a class="nav-link" href="<?= base_url() ?>admin/profil/index/<?= $user['id_operator'] ?>">
           <i class="fas fa-fw fa-user"></i>
           <span>Profil</span></a>
       </li>
@@ -163,7 +163,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?= base_url() ?>admin/profil/<?= $user['id_operator'] ?>">
+                <a class="dropdown-item" href="<?= base_url() ?>admin/profil/index/<?= $user['id_operator'] ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profil
                 </a>

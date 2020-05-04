@@ -13,7 +13,7 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <form action="<?= base_url() ?>admin/ubah_barang/<?= $id_barang ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url() ?>admin/barang/ubah_barang/<?= $id_barang ?>" method="post" enctype="multipart/form-data">
                   <table class="table table-bordered" width="100%" cellspacing="0">
                     <tbody>
                       
@@ -75,8 +75,8 @@
                     </tbody>
                   </table>
                   
-                  <button type="submit" class="btn btn-primary float-right">Simpan</button>
-                  <a href="<?= base_url() ?>admin/daftar_barang" class="btn btn-secondary mr-3 float-right">Batal</a>
+                  <button type="submit" class="btn btn-primary float-right"><i class="fa fa-save"></i> Simpan</button>
+                  <a href="<?= base_url() ?>admin/barang" class="btn btn-secondary mr-3 float-right"><i class="fa fa-arrow-left"></i> Batal</a>
 
                 </form>
               </div>

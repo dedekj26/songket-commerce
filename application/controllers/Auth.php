@@ -35,7 +35,7 @@ class Auth extends CI_Controller {
         		];
         		$this->session->set_userdata($data);
 
-        		redirect('admin');
+        		redirect('admin/dashboard');
         	}
         	else{
         		$this->session->set_flashdata('login', 'password');

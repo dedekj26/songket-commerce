@@ -15,7 +15,7 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <form action="<?= base_url() ?>admin/ubah_profil/<?= $id_user; ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url() ?>admin/profil/ubah_profil/<?= $id_user; ?>" method="post" enctype="multipart/form-data">
                   <table class="table table-bordered" width="100%" cellspacing="0">
                     <tbody>
                       
@@ -36,14 +36,14 @@
                         <td class="align-middle">Jenis Kelamin</td>
                         <td>
                             <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
-                                <option value="<?= $row['jenis_kelamin'] ?>" 
+                                <option value="Laki-Laki" 
                                 <?php
                                     if($row['jenis_kelamin'] == "Laki-Laki"){
                                         echo "selected";
                                     }
                                 ?>
                                 >Laki-Laki</option>
-                                <option value="<?= $row['jenis_kelamin'] ?>" 
+                                <option value="Perempuan" 
                                 <?php
                                     if($row['jenis_kelamin'] == "Perempuan"){
                                         echo "selected";
@@ -110,7 +110,7 @@
                   </table>
 
                   <button type="submit" class="btn btn-primary float-right"><i class="fa fa-save"></i> Simpan</button>
-                  <a href="<?= base_url() ?>admin/profil/<?= $row['id_operator']; ?>" class="btn btn-secondary mr-3 float-right"><i class="fa fa-arrow-left"></i> Batal</a>
+                  <a href="<?= base_url() ?>admin/profil/index/<?= $row['id_operator']; ?>" class="btn btn-secondary mr-3 float-right"><i class="fa fa-arrow-left"></i> Batal</a>
 
                 </form>
               </div>

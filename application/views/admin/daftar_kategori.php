@@ -12,7 +12,7 @@
           <div class="card shadow mb-4 border-bottom-primary">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
               <h6 class="m-0 font-weight-bold text-primary">Daftar Kategori</h6>
-              <a href="<?= base_url() ?>admin/tambah_kategori" class="btn btn-primary">
+              <a href="<?= base_url() ?>admin/kategori/tambah_kategori" class="btn btn-primary">
                 <i class="fa fa-plus"></i>&nbsp Tambah Data
               </a>
             </div>
@@ -39,10 +39,10 @@
                         <td><?= $row['nama_kategori']; ?></td>
                         <td><?= $row['deskripsi_kategori']; ?></td>
                         <td>
-                          <a href="<?= base_url() ?>admin/hapus_kategori/<?= $row['id_kategori'] ?>" class="btn btn-danger btn-sm tombol-hapus">
+                          <a href="<?= base_url() ?>admin/kategori/hapus_kategori/<?= $row['id_kategori'] ?>" class="btn btn-danger btn-sm tombol-hapus">
                             <i class="fa fa-trash"></i>
                           </a>
-                          <a href="<?= base_url() ?>admin/form_ubah_kategori/<?= $row['id_kategori'] ?>" class="btn btn-sm btn-success">
+                          <a href="<?= base_url() ?>admin/kategori/form_ubah_kategori/<?= $row['id_kategori'] ?>" class="btn btn-sm btn-success">
                             <i class="fa fa-edit"></i>
                           </a>
                         </td>

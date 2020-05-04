@@ -12,7 +12,7 @@
           <div class="card shadow mb-4 border-bottom-primary">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
               <h6 class="m-0 font-weight-bold text-primary">Daftar Barang</h6>
-              <a href="<?= base_url() ?>admin/tambah_barang" class="btn btn-primary">
+              <a href="<?= base_url() ?>admin/barang/tambah_barang" class="btn btn-primary">
                 <i class="fa fa-plus"></i>&nbsp Tambah Data
               </a>
             </div>
@@ -51,10 +51,10 @@
                       <td class="align-middle">Rp. <?= $row['harga_barang']; ?></td>
                       <td class="text-center align-middle"><img src="<?= base_url() ?>assets/img/barang/<?= $row['foto_barang']; ?>" alt="Foto Barang" height="90" width="90"></td>
                       <td>
-                          <a href="<?= base_url() ?>admin/hapus_barang/<?= $row['id_barang'] ?>" class="btn btn-danger btn-sm tombol-hapus">
+                          <a href="<?= base_url() ?>admin/barang/hapus_barang/<?= $row['id_barang'] ?>" class="btn btn-danger btn-sm tombol-hapus">
                             <i class="fa fa-trash"></i>
                           </a>
-                          <a href="<?= base_url() ?>admin/form_ubah_barang/<?= $row['id_barang'] ?>" class="btn btn-success btn-sm">
+                          <a href="<?= base_url() ?>admin/barang/form_ubah_barang/<?= $row['id_barang'] ?>" class="btn btn-success btn-sm">
                             <i class="fa fa-edit"></i>
                           </a>
                       </td>

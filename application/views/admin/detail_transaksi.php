@@ -25,7 +25,7 @@
     </tr>
     <tr>
         <th>Status Transaksi</th>
-        <td>PENDING</td>
+        <td><?= $row['status_transaksi']; ?></td>
     </tr>
     <tr>
         <th>Pembelian Product</th>
@@ -37,11 +37,32 @@
                     <th>Tipe</th>
                     <th>Harga</th>
                 </tr>
-                <tr>
-                  <td>sadj</td>
-                  <td>asdj</td>
-                  <td>asds</td>
-                </tr>
+                
+                <?php
+                    foreach ($transaksi_barang as $trans) :
+                        foreach ($barang as $prod) {
+                            if( $trans['id_barang'] == $prod['id_barang']  ){
+                ?>
+                                <tr>
+                                    <td><?= $prod['nama_barang'] ?></td>
+                                    
+                                    <?php
+                                    foreach ($kategori as $kat) :
+                                        if($prod['id_kategori'] == $kat['id_kategori']){
+                                    ?>
+                                        <td><?= $kat['nama_kategori'] ?></td>
+                                    <?php
+                                        }
+                                    endforeach;
+                                    ?>
+
+                                    <td>Rp. <?= $prod['harga_barang'] ?></td>
+                                </tr>
+                <?php
+                            }
+                        }
+                  endforeach; 
+                ?>
 
             </table>
         </td>
