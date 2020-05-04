@@ -23,6 +23,7 @@
                     <tr>
                       <th>No</th>
                       <th>Nama Barang</th>
+                      <th>Deskripsi Barang</th>
                       <th>Kategori</th>
                       <th>Harga</th>
                       <th>Foto Barang</th>
@@ -38,6 +39,7 @@
                     <tr>
                       <td class="text-center align-middle"><?= $n; ?></td>
                       <td class="align-middle"><?= $row['nama_barang']; ?></td>
+                      <td class="align-middle"><?= word_limiter($row['deskripsi_barang'], 2); ?></td>
 
                       <td class="align-middle"><?php
                       foreach ($kategori as $kat) {
@@ -48,13 +50,13 @@
                       }
                       ?></td>
 
-                      <td class="align-middle">Rp. <?= $row['harga_barang']; ?></td>
+                      <td class="align-middle">Rp. <?= number_format($row['harga_barang']); ?></td>
                       <td class="text-center align-middle"><img src="<?= base_url() ?>assets/img/barang/<?= $row['foto_barang']; ?>" alt="Foto Barang" height="90" width="90"></td>
                       <td>
                           <a href="<?= base_url() ?>admin/barang/hapus_barang/<?= $row['id_barang'] ?>" class="btn btn-danger btn-sm tombol-hapus">
                             <i class="fa fa-trash"></i>
                           </a>
-                          <a href="<?= base_url() ?>admin/barang/form_ubah_barang/<?= $row['id_barang'] ?>" class="btn btn-success btn-sm">
+                          <a href="<?= base_url() ?>admin/barang/form_ubah_barang/<?= $row['id_barang'] ?>" class="btn btn-success btn-sm mt-2">
                             <i class="fa fa-edit"></i>
                           </a>
                       </td>

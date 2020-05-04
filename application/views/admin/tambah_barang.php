@@ -23,6 +23,12 @@
                         </td>
                       </tr>
                       <tr>
+                        <td class="align-middle">Deskripsi Barang</td>
+                        <td>
+                          <textarea name="deskripsi_barang" id="deskripsi_barang" class="form-control" rows="10" required></textarea>
+                        </td>
+                      </tr>
+                      <tr>
                         <td class="align-middle">Pilih Kategori</td>
                         <td>
                           <select name="kategori" id="kategori" class="form-control">

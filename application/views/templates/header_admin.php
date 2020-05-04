@@ -98,7 +98,7 @@
         <div id="collapsePenjualan" class="collapse" aria-labelledby="headingPenjualan" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu Transaksi</h6>
-            <a class="collapse-item" href="<?= base_url() ?>admin/transaksi">Data Tahunan</a>
+            <a class="collapse-item" href="<?= base_url() ?>admin/transaksi">Data Transaksi</a>
           </div>
         </div>
       </li>

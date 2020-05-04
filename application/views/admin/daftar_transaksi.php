@@ -11,18 +11,18 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4 border-bottom-primary">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Transaksi Tahun </h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Transaksi</h6>
             </div>
             <div class="card-body">
               
-              <form action="<?= base_url() ?>admin/set_tahun" class="row">
+<!--               <form action="<?= base_url() ?>admin/set_tahun" class="row">
                 <div class="col-4">
                     <input type="text" name="tahun" placeholder="Pilih Tahun" id="datepicker" class="mb-3 form-control" />
                 </div>
                 <div class="col-4">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                 </div>
-              </form>
+              </form> -->
 
               <div class="table-responsive">
                 <table class="table table-bordered dt-responsive nowrap" id="dataTable" width="100%" cellspacing="0">
@@ -30,6 +30,7 @@
                     <tr>
                       <th>No</th>
                       <th>Kode Transaksi</th>
+                      <th>Nama Pelanggan</th>
                       <th>Total Harga</th>
                       <th>Tanggal Transaksi</th>
                       <th>Status</th>
@@ -46,6 +47,7 @@
                     <tr>
                       <td><?= $n; ?></td>
                       <td><?= $row['kode_transaksi']; ?></td>
+                      <td><?= $row['nama_pelanggan']; ?></td>
                       <td>Rp. <?= $row['total_bayar']; ?></td>
                       <td><?= $row['tgl_transaksi']; ?></td>
                       <td>

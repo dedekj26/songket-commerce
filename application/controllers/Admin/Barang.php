@@ -7,7 +7,8 @@ class Barang extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Kategori_model');
-        $this->load->model('Barang_model');
+		$this->load->model('Barang_model');
+		$this->load->helper(array('string', 'text'));
 
         if(!$this->session->userdata('username')) {
         	redirect('auth');
@@ -44,7 +45,8 @@ class Barang extends CI_Controller {
 				'nama_barang' => htmlspecialchars($this->input->post('nama_barang', true)),
 				'id_kategori' => $this->input->post('kategori'),
 				'harga_barang' => $this->input->post('harga_barang'),
-				'foto_barang' => $this->upload()
+				'foto_barang' => $this->upload(),
+				'deskripsi_barang' => $this->input->post('deskripsi_barang')
 		];
 
 		$this->db->insert('barang', $data);
@@ -78,7 +80,8 @@ class Barang extends CI_Controller {
 				'nama_barang' => htmlspecialchars($this->input->post('nama_barang', true)),
 				'id_kategori' => $this->input->post('kategori'),
 				'harga_barang' => $this->input->post('harga_barang'),
-				'foto_barang' => $this->upload()
+				'foto_barang' => $this->upload(),
+				'deskripsi_barang' => $this->input->post('deskripsi_barang')
 		];
 
 		$this->Barang_model->ubah_barang($id_barang, $data);

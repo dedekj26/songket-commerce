@@ -12,7 +12,7 @@ class Auth extends CI_Controller {
 	public function index()
 	{
         if($this->session->userdata('username')) {
-            redirect('admin');
+            redirect('admin/dashboard');
         }
         else{    
     		$this->load->view('templates/header_auth.php');

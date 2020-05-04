@@ -20,7 +20,7 @@ class Dashboard extends CI_Controller {
 		$data['pending'] = $this->Transaksi_model->get_jumlah('PENDING');
 		$data['failed'] = $this->Transaksi_model->get_jumlah('FAILED');
 		$data['penghasilan'] = $this->Transaksi_model->pilih_transaksi_status('SUCCESS');
-		$data['transaksi'] = $this->Transaksi_model->get_transaksi();
+		$data['transaksi'] = $this->Transaksi_model->get_transaksi_5();
 
 		$this->load->view('templates/header_admin.php', $data);
 		$this->load->view('admin/dashboard', $data);
