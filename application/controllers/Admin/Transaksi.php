@@ -36,6 +36,17 @@ class Transaksi extends CI_Controller {
 
 		$this->load->view('admin/detail_transaksi.php', $data);
 	}
+
+	public function ubah_transaksi($id_transaksi, $status_transaksi)
+	{
+		$data = [
+				'status_transaksi' => $status_transaksi
+		];
+
+		$this->Transaksi_model->ubah_transaksi($id_transaksi, $data);
+		$this->session->set_flashdata('flash', 'Di Update');
+		redirect('admin/transaksi');
+	}
 	// End of Controller Transaksi
 
 }

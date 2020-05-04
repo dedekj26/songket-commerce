@@ -2,6 +2,8 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
+          <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>" data-jenis="Transaksi"></div>
+
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800"></h1>
           <p class="mb-4"></p>

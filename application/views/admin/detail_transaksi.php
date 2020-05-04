@@ -72,19 +72,19 @@
 <div class="row">
 
     <div class="col-4">
-        <a href="#" class="btn btn-success btn-block">
+        <a href="<?= base_url() ?>admin/transaksi/ubah_transaksi/<?= $row['id_transaksi'] ?>/SUCCESS" class="btn btn-success btn-block">
             <i class="fa fa-check"></i> Set Sukses
         </a>
     </div>
 
     <div class="col-4">
-        <a href="#" class="btn btn-warning btn-block">
+        <a href="<?= base_url() ?>admin/transaksi/ubah_transaksi/<?= $row['id_transaksi'] ?>/FAILED" class="btn btn-warning btn-block">
             <i class="fa fa-times"></i> Set Gagal
         </a>
     </div>
 
     <div class="col-4">
-        <a href="#" class="btn btn-info btn-block">
+        <a href="<?= base_url() ?>admin/transaksi/ubah_transaksi/<?= $row['id_transaksi'] ?>/PENDING" class="btn btn-info btn-block">
             <i class="fa fa-spinner"></i> Set Pending
         </a>
     </div>
