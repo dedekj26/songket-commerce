@@ -41,6 +41,26 @@
     </div>
   </div>
 
+  <!-- Modal Detail Transaksi -->
+  <div class="modal" id="mymodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+
+          <div class="modal-header">
+              <h5 class="modal-title text-left"></h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+
+          <div class="modal-body">
+            <i class="fa fa-spinner fa-spin"></i>
+          </div>
+
+      </div>
+  </div>
+  </div>
+
   <!-- Bootstrap core JavaScript-->
   <script src="<?= base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
   <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -81,6 +101,18 @@
       format: "dd/mm/yyyy"
     });
   });
+  </script>
+
+ <script>
+    jQuery(document).ready(function($){
+        $('#mymodal').on('show.bs.modal', function(e){
+            var button = $(e.relatedTarget);
+            var modal = $(this);
+
+            modal.find('.modal-body').load(button.data("remote"));
+            modal.find('.modal-title').html(button.data("title"));
+        });
+    });
   </script>
 
 </body>

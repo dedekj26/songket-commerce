@@ -9,6 +9,7 @@ class Admin extends CI_Controller {
         $this->load->model('Kategori_model');
         $this->load->model('Barang_model');
         $this->load->model('User_model');
+        $this->load->model('Transaksi_model');
 
         if(!$this->session->userdata('username')) {
         	redirect('auth');
@@ -191,25 +192,25 @@ class Admin extends CI_Controller {
 	// End of Controller Kategori
 
 
-	// Controller Penjualan
-	public function penjualan_tahun()
+	// Controller Transaksi
+	public function daftar_transaksi()
 	{
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+		$data['transaksi'] = $this->Transaksi_model->get_transaksi();
 
 		$this->load->view('templates/header_admin.php', $data);
-		$this->load->view('admin/penjualan_tahun');
+		$this->load->view('admin/daftar_transaksi', $data);
 		$this->load->view('templates/footer_admin.php');
 	}
 
-	public function penjualan_bulan()
+	public function detail_transaksi($id_transaksi)
 	{
-		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+		$data['transaksi'] = $this->Transaksi_model->pilih_transaksi($id_transaksi);
 
-		$this->load->view('templates/header_admin.php', $data);
-		$this->load->view('admin/penjualan_bulan');
-		$this->load->view('templates/footer_admin.php');
+		$this->load->view('admin/detail_transaksi.php', $data);
 	}
-	// End of Controller Penjualan
+	// End of Controller Transaksi
+
 
 	// Controller Profil
 	public function profil($id_user)

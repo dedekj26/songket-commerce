@@ -9,7 +9,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4 border-bottom-primary">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Penjualan Tahun 2020</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Transaksi Tahun </h6>
             </div>
             <div class="card-body">
               
@@ -27,35 +27,42 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Kode Penjualan</th>
+                      <th>Kode Transaksi</th>
                       <th>Total Harga</th>
-                      <th>Tanggal Penjualan</th>
+                      <th>Tanggal Transaksi</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
+
+                    <?php
+                    $n = 1;
+                      foreach ($transaksi as $row) :
+                    ?>
+
                     <tr>
-                      <td>1</td>
-                      <td>BS001</td>
-                      <td>Rp. 520.000</td>
-                      <td>12 Februari 2020</td>
+                      <td><?= $n; ?></td>
+                      <td><?= $row['kode_transaksi']; ?></td>
+                      <td>Rp. <?= $row['total_bayar']; ?></td>
+                      <td><?= $row['tgl_transaksi']; ?></td>
                       <td>
-                         <a href="<?= base_url() ?>admin/detail_penjualan/" class="btn btn-success btn-sm">
-                            <i class="fa fa-desktop"></i> Detail
+                          <a  href="#mymodal"
+                              data-remote="<?= base_url() ?>admin/detail_transaksi/<?= $row['id_transaksi']; ?>"
+                              data-title="Detail Transaksi <?= $row['kode_transaksi']; ?>"
+                              data-toggle="modal"
+                              data-target="#mymodal"
+                              data-id="<?= $row['id_transaksi']; ?>"
+                              class="btn btn-info btn-sm">
+                              <i class="fa fa-desktop"></i> Detail
                           </a>
                       </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>KS002</td>
-                      <td>Rp. 120.000</td>
-                      <td>14 Februari 2020</td>
-                      <td>
-                         <a href="<?= base_url() ?>admin/detail_penjualan/" class="btn btn-success btn-sm">
-                            <i class="fa fa-desktop"></i> Detail
-                          </a>
-                      </td>
-                    </tr>
+
+                    <?php
+                      $n++;
+                      endforeach; 
+                    ?>
+
                   </tbody>
                 </table>
               </div>

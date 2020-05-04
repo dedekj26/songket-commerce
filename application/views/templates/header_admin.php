@@ -98,8 +98,7 @@
         <div id="collapsePenjualan" class="collapse" aria-labelledby="headingPenjualan" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu Penjualan</h6>
-            <a class="collapse-item" href="<?= base_url() ?>admin/penjualan_tahun">Data Tahunan</a>
-            <a class="collapse-item" href="<?= base_url() ?>admin/penjualan_bulan">Data Bulanan</a>
+            <a class="collapse-item" href="<?= base_url() ?>admin/daftar_transaksi">Data Tahunan</a>
           </div>
         </div>
       </li>
