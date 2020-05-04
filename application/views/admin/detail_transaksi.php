@@ -67,6 +67,22 @@
             </table>
         </td>
     </tr>
+    
+    <?php 
+        if($row['status_transaksi'] == 'PENDING'){
+    ?>
+    <tr>
+        <th colspan="2" class="text-center">BUKTI TRANSFER</th>
+    </tr>
+    <tr>
+        <td colspan="2" class="text-center">
+            <img src="<?= base_url() ?>/assets/img/bukti_transfer/<?= $row['bukti_transfer'] ?>" width="400px" alt="">
+        </td>
+    </tr>
+    <?php
+        } 
+    ?>
+        
 </table>
 
 <div class="row">
