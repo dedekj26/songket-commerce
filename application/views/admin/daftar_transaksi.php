@@ -48,7 +48,7 @@
                       <td><?= $n; ?></td>
                       <td><?= $row['kode_transaksi']; ?></td>
                       <td><?= $row['nama_pelanggan']; ?></td>
-                      <td>Rp. <?= $row['total_bayar']; ?></td>
+                      <td>Rp. <?= number_format($row['total_bayar']); ?></td>
                       <td><?= $row['tgl_transaksi']; ?></td>
                       <td>
                         <?php

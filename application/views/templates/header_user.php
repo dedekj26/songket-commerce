@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendor/front-end/css/jquery-ui.min.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendor/front-end/css/slicknav.min.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendor/front-end/css/style.css" type="text/css" />
+
 </head>
 
 <body>
@@ -95,8 +96,8 @@
                                     </div>
 
                                     <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">LIHAT KERANJANG</a>
-                                        <a href="#" class="primary-btn checkout-btn">BAYAR</a>
+                                        <a href="<?= base_url() ?>user/product/shopping_cart" class="primary-btn view-card">LIHAT KERANJANG</a>
+                                        <a href="<?= base_url() ?>user/product/shopping_cart" class="primary-btn checkout-btn">BAYAR</a>
                                     </div>
 
                                 </div>

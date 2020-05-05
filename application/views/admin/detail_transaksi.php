@@ -21,7 +21,7 @@
     </tr>
     <tr>
         <th>Total Transaksi</th>
-        <td>Rp. <?= $row['total_bayar']; ?></td>
+        <td>Rp. <?= number_format($row['total_bayar']); ?> (termasuk ongkir)</td>
     </tr>
     <tr>
         <th>Status Transaksi</th>
@@ -56,7 +56,7 @@
                                     endforeach;
                                     ?>
 
-                                    <td>Rp. <?= $prod['harga_barang'] ?></td>
+                                    <td>Rp. <?= number_format($prod['harga_barang']) ?></td>
                                 </tr>
                 <?php
                             }

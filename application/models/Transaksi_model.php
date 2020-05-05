@@ -15,6 +15,13 @@ class Transaksi_model extends CI_model {
         return $this->db->get('transaksi_detail')->result_array();
     }
 
+    public function get_transaksi_1()
+    {
+        $this->db->order_by("id_transaksi", "desc");
+        $this->db->limit('1');
+        return $this->db->get('transaksi_detail')->result_array();
+    }
+
     public function pilih_transaksi($id_transaksi)
     {
         $this->db->where('id_transaksi', $id_transaksi);

@@ -45,4 +45,89 @@ class Product extends CI_Controller {
 		$this->load->view('templates/footer_user.php');
 	}
 
+	public function rajaongkir($data_kota, $jumlah_ongkir = "")
+	{
+		$data['barang'] = $this->Barang_model->get_barang();
+		$data['kategori'] = $this->Kategori_model->get_kategori();
+		$data['keranjang'] = $this->cart->contents();
+		$data['kota'] = $data_kota;
+		$data['jumlah_ongkir'] = $jumlah_ongkir;
+
+		$this->load->view('templates/header_user.php', $data);
+		$this->load->view('user/shopping_cart', $data);
+		$this->load->view('templates/footer_user.php');
+	}
+
+
+	// RAJA ONGKIR API
+	public function shopping_cart($jumlah_ongkir = "") {
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		  	CURLOPT_URL => "http://api.rajaongkir.com/starter/city",
+		  	CURLOPT_RETURNTRANSFER => true,
+		  	CURLOPT_ENCODING => "",
+		  	CURLOPT_MAXREDIRS => 10,
+		  	CURLOPT_TIMEOUT => 30,
+		  	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		  	CURLOPT_CUSTOMREQUEST => "GET",
+		  	CURLOPT_HTTPHEADER => array(
+		    	"key: 69cfd7e978b50a95bbb6ee6082f10a9b"
+		  	),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		if ($err) {
+		  	echo "cURL Error #:" . $err;
+		} else {
+			$data_kota = json_decode($response, true);
+			$this->rajaongkir($data_kota, $jumlah_ongkir);
+		}
+	}
+
+	public function cek_ongkir(){
+
+		if($this->input->post('kota')){
+			$curl = curl_init();
+
+			$id_kota = $this->input->post('kota');
+			$kurir = $this->input->post('kurir');
+
+			curl_setopt_array($curl, array(
+			  CURLOPT_URL => "http://api.rajaongkir.com/starter/cost",
+			  CURLOPT_RETURNTRANSFER => true,
+			  CURLOPT_ENCODING => "",
+			  CURLOPT_MAXREDIRS => 10,
+			  CURLOPT_TIMEOUT => 30,
+			  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			  CURLOPT_CUSTOMREQUEST => "POST",
+			  CURLOPT_POSTFIELDS => "origin=327&destination=".$id_kota."&weight=1000&courier=".$kurir."",
+			  CURLOPT_HTTPHEADER => array(
+			    "content-type: application/x-www-form-urlencoded",
+			    "key: 69cfd7e978b50a95bbb6ee6082f10a9b"
+			  ),
+			));
+
+			$response = curl_exec($curl);
+			$err = curl_error($curl);
+
+			curl_close($curl);
+
+			if ($err) {
+			  	echo "cURL Error #:" . $err;
+			} else {
+			  	$jumlah_ongkir = json_decode($response, true);
+				$this->shopping_cart($jumlah_ongkir);
+			}
+		}
+		else{
+			echo "gagal";
+			// $this->shopping_cart(0);
+		}
+	}
+
 }
