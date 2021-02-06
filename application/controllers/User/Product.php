@@ -125,8 +125,8 @@ class Product extends CI_Controller {
 			}
 		}
 		else{
-			echo "gagal";
-			// $this->shopping_cart(0);
+			// echo "gagal";
+			$this->shopping_cart(0);
 		}
 	}
 
